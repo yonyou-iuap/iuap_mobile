@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="native/out" path="ma/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="com.yonyou.uap.mobile.library.container/Framework_Library"/>
+	<classpathentry kind="con" path="com.yonyou.uap.mobile.library.container/Product_Common_Library"/>
+	<classpathentry kind="con" path="com.yonyou.uap.mobile.library.container/Middleware_Library"/>
+	<classpathentry kind="con" path="com.yonyou.uap.mobile.library.container/Module_Public_Library"/>
+	<classpathentry kind="con" path="com.yonyou.uap.mobile.library.container/Module_Client_Library"/>
+	<classpathentry kind="con" path="com.yonyou.uap.mobile.library.container/Module_Private_Library"/>
+	<classpathentry kind="con" path="com.yonyou.uap.mobile.library.container/Module_Lang_Library"/>
+	<classpathentry kind="con" path="com.yonyou.uap.mobile.library.container/Generated_EJB"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

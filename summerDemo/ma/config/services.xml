@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gateway>
+	
+	<service id="MyWebService" provider="webservice" method="getName" returntype="String">
+		<properties>
+			<params>param1:String</params>
+		</properties>
+		<ds-set>
+			<datasource name="TestWebService" />
+		</ds-set>
+	</service>
+	
+</gateway>

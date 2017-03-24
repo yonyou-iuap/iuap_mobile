@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../css/font-icons.css">
+		<link rel="stylesheet" href="../css/winnormal.css">
+        <link rel="stylesheet" type="text/css" href="../css/iuapmobile.um.listview.css">
+
+		<script src="../js/summer.js" ></script>		
+		<script src="../js/jquery.min.js" ></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../js/winnormal.js" ></script>
+        <script type="text/javascript" src="../js/knockout.js"></script>
+        <script type="text/javascript" src="../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+	<body>
+		<div class="um-win" id="index">
+			<div class="um-header" >
+				<a href="#"  class="um-back" id="btn"></a>
+				<h3>win普通列表</h3>
+			</div>
+
+			<div class="um-content">
+				
+                <div class="um-listview-wrap" id="listview">
+                	<ul class="um-list um-no-active" data-bind="foreach: data">
+                		<li class="um-listview-row">
+                			<a href="#" class="um-list-item um-swipe-action um-no-icon">
+                				<div class="um-swipe-btns">
+                					<span class="um-swipe-btn to-store ti-star" data-bind="click:$parent.rowCollect"></span>
+                					<span class="um-swipe-btn um-delete ti-trash"></span>
+                				</div>
+                				<div class="um-list-item-media msg-info">
+                					<img alt="" data-bind="attr:{'src': img}" width=50>
+                					<span class="um-badge" data-bind="text:msgNum,visible:msgNum>0"></span>
+                				</div>
+                				<div class="um-list-item-inner">
+                					<div class="um-list-item-body">
+                						<p class="um-media-heading um-gray fb f16 um-text-overflow">来源于：<span data-bind="text:sender"></span></p>
+                						<p class="f16 fb um-text-overflow">标题：<span data-bind="text:title"></span></p>
+                						<p class="um-gray f14 um-text-overflow">内容：<span data-bind="text:lastMsg"></span></p>
+                					</div>
+                					<div class="pr5">
+                						<span class="um-gray f12" data-bind="text:lastTime"></span>
+                					</div>
+                				</div> 
+                			</a>
+                		</li>
+                	</ul>
+                </div>
+
+			</div>
+
+
+		</div>
+
+
+	</body>
+</html>

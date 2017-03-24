@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../css/font-icons.css">
+		<link rel="stylesheet" href="../css/wingroup.css">
+        <link rel="stylesheet" type="text/css" href="../css/iuapmobile.um.listgroup-2.7.0.css">
+
+		<script src="../js/summer.js" ></script>		
+		<script src="../js/jquery.min.js" ></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../js/wingroup.js" ></script>
+        <script type="text/javascript" src="../js/knockout-2.2.0.js"></script>
+        <script type="text/javascript" src="../js/Frameworks/iuapmobile.frameworks.listgroup-2.7.0.js"></script>
+	</head>
+	<body>
+		<div class="um-win" id="index">
+			
+			
+			
+            <div class="um-header-light um-header" >
+            	<a href="#"  class="um-back" id="back_btn"></a>
+            	<h3>wingroup</h3>
+            	<div class="um-header-btns">
+            		<i class="ti-plus mr5" ></i>
+            	</div>
+            </div>
+
+			
+ 
+			<div class="um-content">
+				
+                <div class="um-listgroup-wrap" id="listgroup">
+                	<ul class="um-listgroup" data-bind="foreach:datas">
+                        <li class="um-listgroup-group">
+                            <a class="um-box-vc um-listgroup-title">
+                				<span class="um-listgroup-icon">
+                					<i class="ti-angle-down"></i>
+                				</span>
+                				<span data-bind="text:gname">
+                				</span>
+                		    </a>
+                			<ul class="um-list um-no-active" data-bind="foreach:row">
+                				<li class="um-listgroup-row">
+                					<a href="#" class="um-list-item um-swipe-action">
+                						<div class="um-swipe-btns">                      
+                							<span class="um-swipe-btn um-delete">删除</span>
+                						</div>
+                						<div class="um-list-item-media">
+                							<img alt="" width=50 data-bind="attr:{src: img}">
+                						</div>
+                						<div class="um-list-item-inner">
+                							<div class="um-list-item-body">
+                								<h4 data-bind="text:name" class="f16"></h4>
+                								<p data-bind="text:descri" class="f14 um-text-overflow"></p>
+                							</div>
+                							<div class="um-list-item-right">
+                								<span class="um-badge um-btn-success mr10" data-bind="text:update"></span>
+                							</div>
+                						</div>
+                					</a>
+                				</li>
+                			</ul>
+                        </li>
+                    </ul>            
+                </div>
+
+			</div>
+
+
+		</div>
+
+
+	</body>
+</html>

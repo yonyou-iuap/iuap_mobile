@@ -1,0 +1,133 @@
+body {
+	font-family: "Heiti SC", "microsoft yahei";
+	font-size: 14px;
+}
+.um-content {
+	overflow: hidden;
+}
+.um-list-item-after {
+	margin-right: -10px;
+}
+.top-list {
+	width: 100%;
+	overflow: hidden;
+	overflow-x: auto;
+}
+.top-list li {
+	display: inline-block;
+	padding: 12px 10px;
+	font-size: 12px;
+	float: left;
+}
+.top-list li.active a {
+	color: #108510;
+}
+.um-fill {
+	padding-top: 5px;
+}
+.um-list {
+	margin: 0;
+}
+.left-list,
+.right-list {
+	height: 500px;
+	overflow: auto;
+	padding-bottom: 30px;
+	-webkit-overflow-scrolling: touch;
+}
+.left-list {
+	padding-left: 5px;
+	padding-right: 0;
+}
+.left-list li {
+	border: none;
+}
+.left-list li a.btn,
+.left-list li a.btn:focus {
+	background-color: #ececec;
+	text-align: center;
+	font-size: 13px;
+}
+.left-list li a.btn.active,
+.left-list li a.btn:active {
+	color: red;
+	background-color: #fff;
+}
+.right-list {
+	background-color: #fff;
+	overflow: auto;
+}
+.right-list .um-form {
+	margin: 0 -15px 10px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e1e1e1;
+}
+.price {
+	color: red;
+}
+.much {
+	color: #999;
+}
+.right-list .title {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.reduce,
+.add {
+	display: inline-block;
+	font-size: 16px;
+	color: green;
+	white-space: nowrap;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 50%;
+	width: 26px;
+	height: 26px;
+	border: 1px solid green;
+	margin: 0 3px;
+	z-index: 10;
+	line-height: 26px;
+}
+.reduce:active,
+.add:active {
+	background-color: green;
+	color: #fff;
+}
+.reduce,
+.count {
+	display: none;
+}
+.bubble {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 16px;
+	height: 16px;
+	font-size: 12px;
+	background-color: green;
+	color: #fff;
+	border-radius: 50%;
+}
+.bubble:empty {
+	display: none;
+}
+.reduce.show,
+.count.show {
+	display: inline-block;
+}
+.right-list-item {
+	display: none;
+}
+.right-list-item.active {
+	display: block;
+}
+.um-form .um-list-item-body {
+	overflow: visible;
+}
+.um-footer-tabbar {
+	border-top-color: #037e03;
+}
+.um-footer-tabbar li.active a,
+.um-footer-tabbar li > a:active {
+	color: #037e03;
+}
