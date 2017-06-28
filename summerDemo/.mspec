@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project><application id="summerDemo" name="summerDemo" version="1" versionBuild="3.0.1" versionName="2.0.2" icon="css/themes/default/app/android/app.png" moduleName="module" defaultPackage="com.yonyou.summerdemo" reinforcement="false" sandbox="false"/><layout><appBase>www</appBase><main>www/Index.html</main><jslib>www/jslib</jslib><jsapp>www/jsapp</jsapp><css>www/css</css><nativeBase>native</nativeBase></layout></project>
