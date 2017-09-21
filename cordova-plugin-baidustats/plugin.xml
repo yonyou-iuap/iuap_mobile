@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    id="cordova-plugin-baidustats"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    version="2.1.0">
+    <name>BaiduStats</name>
+    <description>Cordova Baidu Stats SDK</description>
+    <author>tianwt of Yonyou iUAP Mobile</author>
+    <license>Apache 2.0</license>
+    <keywords>cordova,baidu stats,百度统计</keywords>
+    <info>
+        百度移动统计
+    </info>
+
+ 	<!-- 您从百度网站获取的APP KEY，根据实际您的APP申请的APP_KEY进行修改 -->
+	<preference name="BAIDUMOBAD_STAT_ID" />
+	 <!-- 渠道商编号 -->
+	<preference name="BAIDUMOBAD_CHANNEL" />
+	 <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START     -->
+	<preference name="BAIDUMOBAD_SEND_STRATEGY"  default="APP_START"/>
+    <engines>
+          <engine name="cordova" version=">=4.0.0" />
+   </engines>
+    <js-module src="www/baidustats.js" name="BaiduStats">
+        <clobbers target="BaiduStats" />
+    </js-module>
+    <platform name="android">
+        <source-file src="src/android/libs/Baidu_Mtj_3.8.0.2.jar" target-dir="libs" />
+        <source-file src="src/android/libs/gson-2.4.jar" target-dir="libs" />
+		<source-file src="src/android/com/yyuap/tianwt/CordovaBaiduStats.java" target-dir="src/com/yyuap/tianwt" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BaiduStats">
+                <param name="android-package" value="com.yyuap.tianwt.CordovaBaiduStats" />
+                <param name="onload" value="true" />
+            </feature>
+            <preference name="BAIDUMOBAD_STAT_ID" value="$BAIDUMOBAD_STAT_ID"/>
+         	<preference name="BAIDUMOBAD_CHANNEL" value="$BAIDUMOBAD_CHANNEL"/>
+         	<preference name="BAIDUMOBAD_SEND_STRATEGY" value="$BAIDUMOBAD_SEND_STRATEGY"/>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+             <uses-permission android:name="android.permission.INTERNET" />
+			 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+			 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+			 <uses-permission android:name="android.permission.GET_TASKS" />
+			 <uses-permission android:name="android.permission.BLUETOOTH" />
+			 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+			 <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+			 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+
+         <config-file target="AndroidManifest.xml" parent="/manifest/application">
+             <meta-data android:name="BaiduMobAd_STAT_ID" android:value="$BAIDUMOBAD_STAT_ID" />
+             <meta-data android:name="BaiduMobAd_CHANNEL" android:value="$BAIDUMOBAD_CHANNEL"/>
+             <meta-data android:name="BaiduMobAd_EXCEPTION_LOG" android:value="true" />
+             <meta-data android:name="BaiduMobAd_SEND_STRATEGY" android:value="$BAIDUMOBAD_SEND_STRATEGY"/>
+             <meta-data android:name="BaiduMobAd_TIME_INTERVAL" android:value="15" />
+             <meta-data android:name="BaiduMobAd_ONLY_WIFI" android:value="false"/>
+             <meta-data android:name="BaiduMobAd_CELL_LOCATION" android:value="true" />
+             <meta-data android:name="BaiduMobAd_WIFI_LOCATION" android:value="true"/>
+			 <meta-data android:name="BaiduMobAd_GPS_LOCATION"   android:value="true"/>
+        </config-file>
+</platform>
+
+<platform name="ios">
+<config-file target="config.xml" parent="/*">
+         <feature name="BaiduStats">
+                <param name="ios-package" value="CordovaBaiduStats" />
+                <param name="onload" value="true" />
+         </feature>
+         <preference name="BAIDUMOBAD_STAT_ID" value="$BAIDUMOBAD_STAT_ID"/>
+         <preference name="BAIDUMOBAD_CHANNEL" value="$BAIDUMOBAD_CHANNEL"/>
+         <preference name="BAIDUMOBAD_SEND_STRATEGY" value="$BAIDUMOBAD_SEND_STRATEGY"/>
+</config-file>  
+
+ <resource-file src="src/ios/BaiduStats.plist" /> 
+
+<config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+    <array>
+        <string>aplipay</string>
+        <string>weixin</string>
+        <string>baidu</string>
+        <string>wechat</string>
+    </array>
+</config-file>
+<config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+</config-file>
+<config-file target="*-Info.plist" parent="CFBundleURLTypes">
+        <array>
+	       <dict>
+		        <key>CFBundleURLName</key>
+		        <string>cordova.baidu.stats</string>
+		        <key>CFBundleURLSchemes</key>
+		        <array>
+		            <string>cordovabaidustats</string>
+		        </array>
+	       </dict>
+    </array>
+ </config-file>
+
+
+ <config-file target="*BaiduStats.plist" parent="BAIDUMOBAD_STAT_ID">
+            <string>$BAIDUMOBAD_STAT_ID</string>
+ </config-file>
+ <config-file target="*BaiduStats.plist" parent="BAIDUMOBAD_CHANNEL">
+            <string>$BAIDUMOBAD_CHANNEL</string>
+ </config-file>
+ <config-file target="*BaiduStats.plist" parent="BAIDUMOBAD_SEND_STRATEGY">
+            <string>$BAIDUMOBAD_SEND_STRATEGY</string>
+ </config-file> 
+
+<config-file target="*BaiduStats.plist" parent="BaiduMobAd_EXCEPTION_LOG">
+            <string>true</string>
+ </config-file>
+
+
+ <config-file target="*BaiduStats.plist" parent="BaiduMobAd_TIME_INTERVAL">
+            <string>15</string>
+ </config-file> 
+
+ <config-file target="*BaiduStats.plist" parent="BaiduMobAd_ONLY_WIFI">
+            <string>false</string>
+ </config-file> 
+
+  <config-file target="*BaiduStats.plist" parent="BaiduMobAd_CELL_LOCATION">
+            <string>true</string>
+ </config-file> 
+
+   <config-file target="*BaiduStats.plist" parent="BaiduMobAd_WIFI_LOCATION">
+            <string>true</string>
+ </config-file> 
+
+   <config-file target="*BaiduStats.plist" parent="BaiduMobAd_GPS_LOCATION">
+            <string>true</string>
+ </config-file> 
+
+<framework src="CoreGraphics.framework" />
+<framework src="CoreTelephony.framework" />
+<framework src="SystemConfiguration.framework" />
+<framework src="CFNetwork.framework" />
+<framework src="CoreMotion.framework" />
+<framework src="QuartzCore.framework" />
+<framework src="Foundation.framework" />
+<framework src="Security.framework" />
+<framework src="UIKit.framework" />
+<framework src="ImageIO.framework" />
+<framework src="JavaScriptCore.framework" />
+<framework src="libicucore.tbd" />
+<framework src="libsqlite3.tbd" />
+<framework src="libc++.tbd" />
+<framework src="libstdc++.tbd" />
+<framework src="libz.1.2.5.tbd" />
+
+<header-file src="src/ios/BaiduStatsSDK/BaiduMobStat.h" />
+<source-file src="src/ios/BaiduStatsSDK/libBaiduMobStat.a" custom="true" framework="true" />
+<header-file src="src/ios/Sources/CordovaBaiduStats.h"  />
+<source-file src="src/ios/Sources/CordovaBaiduStats.m"  />
+<resource-file src="src/ios/YonyouBaiduStats.bundle" />
+</platform>
+</plugin>

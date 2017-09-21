@@ -1,0 +1,28 @@
+{
+	"name": "cordova-plugin-baidustats",
+	"version": "2.1.0",
+	"description": "Cordova baidustats SDK",
+	"cordova": {
+		"id": "cordova-plugin-baidustats",
+		"platforms": [
+			"android"
+		]
+	},
+	"engines": {
+		"cordovaDependencies": {
+			"0.0.1": { "cordova-android": ">4.0.0" }
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"keywords": [
+		"cordova",
+		"beecloud",
+		"ecosystem:cordova",
+		"cordova-android"
+	],
+	"author": "tianweitong",
+	"license": "Apache 2.0"
+}
